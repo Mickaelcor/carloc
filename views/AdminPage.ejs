@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminPage</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('partials/NavbarAdmin.ejs') %>
+        <!--Interface Admin-->
+        <% if(user.admin){%>
+
+            <h2> Mettre une voiture à louer </h2>
+            <div class="container">
+                <form action="/new-car" method="post">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="make" placeholder="Peugeot">
+                        <label for="floatingInput">Marque du véhicule</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="model" placeholder="206">
+                        <label for="floatingInput">Modèle du véhicule</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="year" placeholder="2006">
+                        <label for="floatingInput">Année du véhicule</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="color" placeholder="Rouge">
+                        <label for="floatingInput">Couleur du véhicule</label>
+                    </div>
+
+                    <br>
+                    <div class="d-grid gap-2">
+                        <input type="submit" class="btn btn-success" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+            <% } %>
+</body>
+
+</html>
